@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bilva's Hub</title>
+    <script type="text/javascript">
+      // shadcn's theme uses a `.dark` class (not prefers-color-scheme) so it
+      // can support a manual toggle later — for now, just mirror the OS
+      // setting, applied before paint to avoid a flash of the wrong theme.
+      (function () {
+        var mql = window.matchMedia("(prefers-color-scheme: dark)");
+        function applyTheme(matches) {
+          document.documentElement.classList.toggle("dark", matches);
+        }
+        applyTheme(mql.matches);
+        mql.addEventListener("change", function (e) {
+          applyTheme(e.matches);
+        });
+      })();
+    </script>
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // https://github.com/rafgraph/spa-github-pages
+      // This script checks to see if a redirect is present in the query
+      // string, converts it back into the correct url and adds it to the
+      // browser's history using window.history.replaceState(...), which
+      // won't cause the browser to attempt to load the new url. When the
+      // app's router (if any) loads, it can use this new url as the intended
+      // route.
+      (function (l) {
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(
+            null,
+            null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      })(window.location);
+    </script>
+    <script type="module" crossorigin src="/bilva-hub-pages/assets/index-BCOWownK.js"></script>
+    <link rel="stylesheet" crossorigin href="/bilva-hub-pages/assets/index-Ct4t1wl2.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
